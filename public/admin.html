@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin | EPLQ</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="top-nav">
+    <div class="logo">EPLQ</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <h2>Admin Panel – Upload Encrypted Data</h2>
+  <form id="adminUploadForm">
+    <input type="file" id="dataFile" />
+    <button type="submit">Upload</button>
+  </form>
+
+  <script>
+    document.getElementById("adminUploadForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const file = document.getElementById("dataFile").files[0];
+      if (file) {
+        alert(`File "${file.name}" uploaded successfully!`);
+      } else {
+        alert("Please select a file.");
+      }
+    });
+  </script>
+</body>
+</html>

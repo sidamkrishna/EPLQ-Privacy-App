@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard | EPLQ</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <img id="bg-map" src="https://www.vecteezy.com/vector-art/19527760-world-map-with-country-name" />
+
+  <nav class="top-nav">
+    <div class="logo">EPLQ</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="login.html">Logout</a></li>
+    </ul>
+  </nav>
+
+  <h2>Search Encrypted Locations</h2>
+  <form id="searchForm">
+    <input type="text" id="searchQuery" placeholder="Enter search term..." required />
+    <button type="submit">Search</button>
+  </form>
+
+  <div id="results" style="margin-top: 30px;"></div>
+
+  <!-- Firebase SDKs (load first) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <!-- Firebase config and dashboard logic -->
+  <script src="js/firebase-config.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+const mockData = [
+  { "id": "IITKGP", "name": "IIT Kharagpur",   "lat": 22.3145, "lon": 87.3091 },
+  { "id": "IITB",   "name": "IIT Bombay",      "lat": 19.1239, "lon": 72.9094 },
+  { "id": "IITM",   "name": "IIT Madras",      "lat": 13.0132, "lon": 80.2327 },
+  { "id": "IITK",   "name": "IIT Kanpur",      "lat": 26.5114, "lon": 80.2349 },
+  { "id": "IITD",   "name": "IIT Delhi",       "lat": 28.5472, "lon": 77.2003 },
+  { "id": "IITG",   "name": "IIT Guwahati",    "lat": 26.1625, "lon": 91.6081 },
+  { "id": "IITR",   "name": "IIT Roorkee",     "lat": 29.8999, "lon": 77.9053 }
+];
+
+document.getElementById("searchForm")?.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const query = document.getElementById("searchQuery").value.toLowerCase();
+  const resultsDiv = document.getElementById("results");
+
+  const results = mockData.filter(poi =>
+    poi.name.toLowerCase().includes(query)
+  );
+
+  resultsDiv.innerHTML = results.length
+    ? results.map(poi => `<p>${poi.name} — (${poi.lat}, ${poi.lon})</p>`).join("")
+    : "<p>No results found.</p>";
+});
